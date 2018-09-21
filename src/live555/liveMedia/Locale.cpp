@@ -20,7 +20,7 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 // Implementation
 
 #include "Locale.hh"
-#include <strDup.hh>
+#include "strDup.hh"
 
 Locale::Locale(char const* newLocale, LocaleCategory category) {
 #ifndef LOCALE_NOT_USED

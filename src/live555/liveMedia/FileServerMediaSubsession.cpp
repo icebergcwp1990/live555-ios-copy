@@ -29,6 +29,17 @@ FileServerMediaSubsession
   fFileName = strDup(fileName);
 }
 
+FileServerMediaSubsession
+::FileServerMediaSubsession(UsageEnvironment& env,
+                            char const* fileName,
+                            Boolean reuseFirstSource,
+                            portNumBits initialPortNum,
+                            Boolean multiplexRTCPWithRTP)
+: OnDemandServerMediaSubsession(env, reuseFirstSource, initialPortNum, multiplexRTCPWithRTP),
+fFileSize(0) {
+    fFileName = strDup(fileName);
+}
+
 FileServerMediaSubsession::~FileServerMediaSubsession() {
   delete[] (char*)fFileName;
 }

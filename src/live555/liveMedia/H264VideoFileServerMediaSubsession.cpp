@@ -24,6 +24,8 @@ along with this library; if not, write to the Free Software Foundation, Inc.,
 #include "ByteStreamFileSource.hh"
 #include "H264VideoStreamFramer.hh"
 
+
+
 H264VideoFileServerMediaSubsession*
 H264VideoFileServerMediaSubsession::createNew(UsageEnvironment& env,
 					      char const* fileName,
@@ -31,11 +33,31 @@ H264VideoFileServerMediaSubsession::createNew(UsageEnvironment& env,
   return new H264VideoFileServerMediaSubsession(env, fileName, reuseFirstSource);
 }
 
+H264VideoFileServerMediaSubsession*
+H264VideoFileServerMediaSubsession::createNew(UsageEnvironment& env,
+                                              char const* fileName,
+                                              Boolean reuseFirstSource,
+                                              portNumBits initialPortNum,
+                                              Boolean multiplexRTCPWithRTP) {
+    return new H264VideoFileServerMediaSubsession(env, fileName, reuseFirstSource, initialPortNum, multiplexRTCPWithRTP);
+}
+
 H264VideoFileServerMediaSubsession::H264VideoFileServerMediaSubsession(UsageEnvironment& env,
 								       char const* fileName, Boolean reuseFirstSource)
   : FileServerMediaSubsession(env, fileName, reuseFirstSource),
     fAuxSDPLine(NULL), fDoneFlag(0), fDummyRTPSink(NULL) {
 }
+
+H264VideoFileServerMediaSubsession::H264VideoFileServerMediaSubsession(UsageEnvironment& env,
+                                                                       char const* fileName,
+                                                                       Boolean reuseFirstSource,
+                                                                       portNumBits initialPortNum,
+                                                                       Boolean multiplexRTCPWithRTP)
+: FileServerMediaSubsession(env, fileName, reuseFirstSource, initialPortNum, multiplexRTCPWithRTP),
+fAuxSDPLine(NULL), fDoneFlag(0), fDummyRTPSink(NULL) {
+}
+
+
 
 H264VideoFileServerMediaSubsession::~H264VideoFileServerMediaSubsession() {
   delete[] fAuxSDPLine;

@@ -4,14 +4,44 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Live555-OSX.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Live555.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Live555Demo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3BA91F50215390A40095EEC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BA920D12153974B0095EEC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BA9225321539A270095EEC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BA9225F21539B250095EEC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DBE19F1A14ABB5CC000A8D99</key>
 		<dict>
 			<key>primary</key>

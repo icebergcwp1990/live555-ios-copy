@@ -30,6 +30,10 @@ class H264VideoFileServerMediaSubsession: public FileServerMediaSubsession {
 public:
   static H264VideoFileServerMediaSubsession*
   createNew(UsageEnvironment& env, char const* fileName, Boolean reuseFirstSource);
+    
+   static H264VideoFileServerMediaSubsession*
+    createNew(UsageEnvironment& env,char const* fileName,Boolean reuseFirstSource,portNumBits initialPortNum,
+              Boolean multiplexRTCPWithRTP);
 
   // Used to implement "getAuxSDPLine()":
   void checkForAuxSDPLine1();
@@ -38,6 +42,10 @@ public:
 protected:
   H264VideoFileServerMediaSubsession(UsageEnvironment& env,
 				      char const* fileName, Boolean reuseFirstSource);
+    
+    H264VideoFileServerMediaSubsession(UsageEnvironment& env,
+                                       char const* fileName, Boolean reuseFirstSource,portNumBits initialPortNum,Boolean multiplexRTCPWithRTP);
+
       // called only by createNew();
   virtual ~H264VideoFileServerMediaSubsession();
 

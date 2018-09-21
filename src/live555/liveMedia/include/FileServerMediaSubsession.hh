@@ -30,7 +30,14 @@ class FileServerMediaSubsession: public OnDemandServerMediaSubsession {
 protected: // we're a virtual base class
   FileServerMediaSubsession(UsageEnvironment& env, char const* fileName,
 			    Boolean reuseFirstSource);
+  FileServerMediaSubsession(UsageEnvironment& env,
+                          char const* fileName,
+                          Boolean reuseFirstSource,
+                          portNumBits initialPortNum,
+                          Boolean multiplexRTCPWithRTP);
   virtual ~FileServerMediaSubsession();
+    
+    
 
 protected:
   char const* fFileName;
